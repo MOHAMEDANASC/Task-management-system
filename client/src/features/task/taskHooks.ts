@@ -1,10 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import {
-  getTasks,
-  createTask,
-  updateTask,
-  deleteTask,
-} from "../../api/taskApi";
+import { getTasks, createTask, updateTask, deleteTask} from "../../api/api.ts";
 import type { TaskInput } from "../../types/taskTypes.ts";
 
 export const useTasks = (
@@ -58,7 +53,4 @@ export const useDeleteTask = () => {
     },
   });
 };
-
-
-
 

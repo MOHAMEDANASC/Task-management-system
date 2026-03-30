@@ -1,6 +1,21 @@
-import api from "./axios";
+import api from "../lib/axios";
+import type { LoginInput, RegisterInput, AuthResponse } from "../types/authTypes";
 import type { Task, TaskInput } from "../types/taskTypes";
 
+
+export const registerUser = async (
+  data: RegisterInput
+): Promise<AuthResponse> => {
+  const res = await api.post("/auth/register", data);
+  return res.data;
+};
+
+export const loginUser = async (
+  data: LoginInput
+): Promise<AuthResponse> => {
+  const res = await api.post("/auth/login", data);
+  return res.data;
+};
 
 export const getTasks = async (
   page: number,
